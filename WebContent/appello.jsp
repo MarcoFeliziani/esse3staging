@@ -62,7 +62,13 @@ userId = (Integer)session.getAttribute("userId");
 			<div><label for="fineIscrizione"><fmt:message key="appello.label.fineIscrizione" bundle="${lang}" />:</label> <input type="text" name="fineIscrizione" id="fineIscrizione" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${bean.fineIscr}" />" > </div>
 			<div><label for="dataAppello"><fmt:message key="appello.label.dataAppello" bundle="${lang}" />:</label> <input type="text" name="dataAppello" id="dataAppello" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${bean.dataAppello}" />" > </div>
 			<div><label for="ora"><fmt:message key="appello.label.ora" bundle="${lang}" />:</label> <input type="text" name="ora" id="ora" value="<c:out value="${bean.ora}" />" > </div>
-			<div><label for="tipo"><fmt:message key="appello.label.tipo" bundle="${lang}" />:</label> <input type="text" name="tipo" id="tipo" value="<c:out value="${bean.tipo}" />" > </div>
+			<div><label for="tipo"><fmt:message key="appello.label.tipo" bundle="${lang}" />:</label> 
+				<select  name='tipo'>
+					<option value="">NULL</option>
+	    			<option value="scritto" ${bean.tipo == 'scritto' ? 'selected' : ''}><fmt:message key="tipo.scritto" bundle="${lang}" /></option>
+	    			<option value="orale" ${bean.tipo == 'orale' ? 'selected' : ''}><fmt:message key="tipo.orale" bundle="${lang}" /></option>
+				</select>
+			</div>
 		
 		<!-- 	<div><label for="action"><fmt:message key="appello.label.azione" bundle="${lang}" />:</label> <input type="text" name="action" id="action" value="<c:out value="${action}" />" > </div> -->
 			<c:choose>

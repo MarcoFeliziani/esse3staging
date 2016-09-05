@@ -250,12 +250,12 @@ public class AppelloDao extends Dao {
 		sb.append("a.data_appello = " + dataAppello + " ");
 		}
 		if(ora != null && !ora.isEmpty()){
-		//sb.append("and lower(ora) like ('%" + ora.toLowerCase().replaceAll("'","''") + "%') ");
-		sb.append("and a.ora = " + ora + " ");
+		sb.append("and lower(ora) like ('%" + ora.toLowerCase().replaceAll("'","''") + "%') ");
+		//sb.append("and a.ora = " + ora + " ");
 		}
 		if(tipo != null && !tipo.isEmpty()){
-		//sb.append("and lower(tipo) like ('%" + tipo.toLowerCase().replaceAll("'","''") + "%') ");
-		sb.append("and a.tipo = " + tipo + " ");
+		sb.append("and lower(tipo) like ('%" + tipo.toLowerCase().replaceAll("'","''") + "%') ");
+		//sb.append("and a.tipo = " + tipo + " ");
 		}
 		if(docenteId > 0){
 		sb.append("and a.docente_id = " + docenteId + " ");
